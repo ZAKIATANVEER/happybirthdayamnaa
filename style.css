@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', cursive, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #ffe6f0, #ffe0e6);
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+button, .flip-button {
+  background-color: #ff4081;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+button:hover, .flip-button:hover {
+  background-color: #c2185b;
+  transform: scale(1.1);
+}
+
+/* Flip Button Animation */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 100px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.flip-card-front {
+  background-color: #ff4081;
+  color: white;
+}
+
+.flip-card-back {
+  background-color: #fff;
+  color: #d63384;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+/* Balloon float animation */
+.balloons {
+  font-size: 2rem;
+  animation: floatUp 4s ease-in-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
